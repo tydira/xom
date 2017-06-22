@@ -1,38 +1,65 @@
-export default new Proxy(
-  {},
-  {
-    get: function(_, name) {
-      return function(...args) {
-        let element
+class Xom {
+  constructor(options = {}) {
+    this.el = null
+    this.options = options
+  }
 
-        if (name.indexOf(':') !== -1) {
-          element = document.createElementNS(...name.split(':'))
+  handleElement(arg) {
+    if (arg instanceof HTMLElement) {
+      this.el.appendChild(arg)
+      return true
+    }
+  }
+
+  handleArray(arg) {
+    if (arg instanceof Array) {
+      arg.forEach(a => this.handle(a))
+      return true
+    }
+  }
+
+  handleObject(arg) {
+    if (typeof arg === 'object' && !(arg instanceof Array)) {
+      Object.keys(arg).forEach(key => {
+        if (key in this.el) {
+          this.el[key] = arg[key]
         } else {
-          element = document.createElement(name)
+          this.el.setAttribute(key, arg[key])
         }
+      })
+      return true
+    }
+  }
 
-        args.forEach((arg, i) => {
-          if (arg instanceof HTMLElement) {
-            element.appendChild(arg)
-          } else if (
-            i === 0 &&
-            typeof arg === 'object' &&
-            !(arg instanceof Array)
-          ) {
-            Object.keys(arg).forEach(key => {
-              if (key in element) {
-                element[key] = arg[key]
-              } else {
-                element.setAttribute(key, arg[key])
-              }
-            })
-          } else {
-            element.appendChild(document.createTextNode(arg))
-          }
-        })
+  handleGeneric(arg) {
+    this.el.appendChild(document.createTextNode(arg))
+    return true
+  }
 
-        return element
+  handle(arg, i) {
+    if (this.handleElement(arg)) return
+    if (this.handleArray(arg)) return
+    if (i === 0 && this.handleObject(arg)) return
+    if (this.handleGeneric(arg)) return
+  }
+
+  intercept(_, name) {
+    return (...args) => {
+      if (this.options.nameSpace) {
+        this.el = document.createElementNS(this.options.nameSpace, name)
+      } else {
+        this.el = document.createElement(name)
       }
-    },
-  },
-)
+
+      args.forEach((arg, i) => this.handle(arg, i))
+
+      return this.el
+    }
+  }
+
+  buildProxy() {
+    return new Proxy({}, { get: this.intercept.bind(this) })
+  }
+}
+
+export default new Xom().buildProxy()
