@@ -1,4 +1,5 @@
-export default new Proxy({},
+export default new Proxy(
+  {},
   {
     get: function(_, name) {
       return function(...args) {
@@ -32,6 +33,6 @@ export default new Proxy({},
 
         return element
       }
-    }
-  }
+    },
+  },
 )

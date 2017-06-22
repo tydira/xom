@@ -3,8 +3,7 @@ const webpack = require('webpack')
 
 module.exports = {
   context: __dirname,
-  entry: './src/xom.js',
-  devtool: 'source-map',
+  entry: './src/index.js',
 
   output: {
     library: 'xom',

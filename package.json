@@ -1,8 +1,8 @@
 {
   "name": "xom",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Abuse Proxy to build DOM elements.",
-  "main": "./src/index.js",
+  "main": "./dist/xom.js",
   "author": "Justin Krueger <justin@kroo.gs>",
   "license": "MIT",
   "scripts": {
