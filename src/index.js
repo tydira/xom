@@ -13,7 +13,7 @@ class Xom {
 
   handleArray(arg) {
     if (arg instanceof Array) {
-      arg.forEach(a => this.handle(a))
+      arg.forEach(this.handle.bind(this))
       return true
     }
   }
@@ -45,13 +45,13 @@ class Xom {
 
   intercept(_, name) {
     return (...args) => {
-      if (this.options.nameSpace) {
-        this.el = document.createElementNS(this.options.nameSpace, name)
+      if (this.options.namespace) {
+        this.el = document.createElementNS(this.options.namespace, name)
       } else {
         this.el = document.createElement(name)
       }
 
-      args.forEach((arg, i) => this.handle(arg, i))
+      args.forEach(this.handle.bind(this))
 
       return this.el
     }
