@@ -3,10 +3,8 @@ package-lock.json
 yarn.lock
 dist
 node_modules
-flow-typed
 
 .*
 !.git*
 !.babelrc
-!.flowconfig
 !.eslintrc

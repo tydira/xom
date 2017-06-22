@@ -3,14 +3,14 @@ const webpack = require('webpack')
 
 module.exports = {
   context: __dirname,
-  entry: './src/index.js',
+  entry: './src/xom.js',
   devtool: 'source-map',
 
   output: {
-    library: 'es2015-starter',
+    library: 'xom',
     libraryTarget: 'umd',
     path: path.resolve('dist'),
-    filename: 'es2015-starter.js',
+    filename: 'xom.js',
   },
 
   resolve: {
