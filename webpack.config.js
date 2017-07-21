@@ -3,7 +3,7 @@ const webpack = require('webpack')
 
 module.exports = {
   context: __dirname,
-  entry: './src/index.js',
+  entry: './src/xom.js',
 
   output: {
     library: 'xom',
@@ -14,15 +14,10 @@ module.exports = {
 
   resolve: {
     extensions: ['.js'],
-    modules: [
-      path.resolve('node_modules'),
-      path.resolve('src'),
-    ],
+    modules: [path.resolve('node_modules'), path.resolve('src')],
   },
 
-  plugins: [
-    new webpack.optimize.ModuleConcatenationPlugin(),
-  ],
+  plugins: [new webpack.optimize.ModuleConcatenationPlugin()],
 
   module: {
     loaders: [
