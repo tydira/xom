@@ -1,4 +1,4 @@
-class Xom {
+export class Xom {
   constructor(options = {}) {
     this.el = null
     this.options = options
@@ -57,7 +57,7 @@ class Xom {
     }
   }
 
-  buildProxy() {
+  static buildProxy() {
     return new Proxy({}, { get: this.intercept.bind(this) })
   }
 }
