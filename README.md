@@ -1,7 +1,9 @@
 # xom
-[![Dependencies](https://img.shields.io/david/kroogs/xom.svg)]()
-[![Dev Dependencies](https://img.shields.io/david/dev/kroogs/xom.svg)]()
-[![MIT license](https://img.shields.io/npm/l/xom.svg)](https://spdx.org/licenses/MIT)
+[![TravisCI](https://img.shields.io/travis/kroogs/xom.svg)](https://travis-ci.org/kroogs/xom)
+[![Coverage](https://img.shields.io/coveralls/kroogs/xom.svg)](https://coveralls.io/github/kroogs/xom)
+[![Dependencies](https://img.shields.io/david/kroogs/xom.svg)](https://david-dm.org/kroogs/xom)
+[![Dev Dependencies](https://img.shields.io/david/dev/kroogs/xom.svg)](https://david-dm.org/kroogs/xom?type=dev)
+[![MIT License](https://img.shields.io/github/license/kroogs/xom.svg)](https://spdx.org/licenses/MIT)
 
 > Abuse Proxy to build DOM elements.
 

@@ -2,9 +2,15 @@
 package-lock.json
 yarn.lock
 dist
+doc
 node_modules
+flow-typed
+coverage
 
 .*
 !.git*
 !.babelrc
 !.eslintrc
+!.flowconfig
+!.tern-project
+!.travis.yml
