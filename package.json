@@ -4,18 +4,18 @@
   "description": "Abuse Proxy to build DOM elements.",
   "main": "./dist/xom.js",
   "keywords": [],
-  "homepage": "https://github.com/kroogs/proto-es2017",
+  "homepage": "https://github.com/kroogs/xom",
   "author": "Justin Krueger <justin@kroo.gs>",
   "private": "true",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kroogs/proto-es2017.git"
+    "url": "https://github.com/kroogs/xom.git"
   },
   "bugs": {
-    "url": "https://github.com/kroogs/proto-es2017/issues"
+    "url": "https://github.com/kroogs/xom/issues"
   },
-  "main": "./dist/proto-es2017.js",
+  "main": "./dist/xom.js",
   "files": [
     "dist",
     "doc",
@@ -45,7 +45,6 @@
     "eslint": "^4.3.0",
     "eslint-plugin-flowtype": "^2.35.0",
     "eslint-plugin-import": "^2.7.0",
-    "file-loader": "^0.11.2",
     "flow": "^0.2.3",
     "flow-bin": "^0.51.0",
     "flow-typed": "^2.1.5",
