@@ -27,7 +27,7 @@
     "build": "webpack -p",
     "test": "jest --coverage",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "lint": "flow && prettier --no-color --trailing-comma all --no-semi --single-quote --write \"src/**/*.js\" && eslint --fix src",
+    "lint": "prettier --no-color --trailing-comma all --no-semi --single-quote --write \"src/**/*.js\" && eslint --fix src",
     "prepublishOnly": "npm run lint && npm test && npm run build"
   },
   "devDependencies": {
@@ -46,7 +46,7 @@
     "eslint-plugin-flowtype": "^2.35.0",
     "eslint-plugin-import": "^2.7.0",
     "flow": "^0.2.3",
-    "flow-bin": "^0.51.0",
+    "flow-bin": "^0.52.0",
     "flow-typed": "^2.1.5",
     "jest": "^20.0.4",
     "jest-cli": "^20.0.4",

@@ -3,7 +3,7 @@
 [![Coverage](https://img.shields.io/coveralls/kroogs/xom.svg)](https://coveralls.io/github/kroogs/xom)
 [![Dependencies](https://img.shields.io/david/kroogs/xom.svg)](https://david-dm.org/kroogs/xom)
 [![Dev Dependencies](https://img.shields.io/david/dev/kroogs/xom.svg)](https://david-dm.org/kroogs/xom?type=dev)
-[![MIT License](https://img.shields.io/github/license/kroogs/xom.svg)](https://spdx.org/licenses/MIT)
+[![MIT License](https://img.shields.io/github/license/kroogs/proto-es2017.svg)](https://github.com/kroogs/xom/blob/master/LICENSE)
 
 > Abuse Proxy to build DOM elements.
 
