@@ -40,7 +40,7 @@ export class Xom {
     if (this.handleElement(arg)) return
     if (this.handleArray(arg)) return
     if (i === 0 && this.handleObject(arg)) return
-    if (this.handleGeneric(arg)) return
+    this.handleGeneric(arg)
   }
 
   intercept(_, name) {
