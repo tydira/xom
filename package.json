@@ -1,7 +1,7 @@
 {
   "name": "xom",
   "version": "0.3.1",
-  "description": "Abuse Proxy to build DOM elements.",
+  "description": "Build DOM trees by misusing Proxy!",
   "main": "./dist/xom.js",
   "keywords": [],
   "homepage": "https://github.com/kroogs/xom",
