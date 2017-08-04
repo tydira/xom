@@ -10,7 +10,7 @@ describe('Xom', function() {
     })
 
     it('should support namespaces', () => {
-      const xom = Xom.proxy({ namespace: 'honk' })
+      const xom = new Xom({ namespace: 'honk' }).proxy()
       expect(xom.a().namespaceURI).toBe('honk')
     })
   })

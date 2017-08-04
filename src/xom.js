@@ -56,10 +56,9 @@ export class Xom {
     }
   }
 
-  static proxy(...args) {
-    const xom = new Xom(...args)
-    return new Proxy({}, { get: xom.intercept.bind(xom) })
+  proxy() {
+    return new Proxy({}, { get: this.intercept.bind(this) })
   }
 }
 
-export const dom = Xom.proxy()
+export const dom = new Xom().proxy()
