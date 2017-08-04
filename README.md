@@ -39,8 +39,7 @@
   import { Xom } from 'xom'
 
   class MyXom extends Xom {}
-
-  x = MyXom.proxy()
+  const x = MyXom.proxy()
 
   document.appendChild(
     x.div({className: 'banana'},
