@@ -33,7 +33,6 @@ export class Xom {
 
   handleGeneric(arg) {
     this.el.appendChild(document.createTextNode(arg))
-    return true
   }
 
   handle(arg, i) {
@@ -44,7 +43,6 @@ export class Xom {
   }
 
   intercept(_, name) {
-    // if (name === 'Xom') return Xom
     return (...args) => {
       if (this.options.namespace) {
         this.el = document.createElementNS(this.options.namespace, name)
