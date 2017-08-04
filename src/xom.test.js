@@ -55,13 +55,15 @@ describe('Xom', function() {
 
   describe('#handleGeneric', function() {
     it('should append a Text node', () => {
-      const html = x.div([x.a(), x.br(), 'honk'])
+      const html = x.div('honk', 'womp', 'one', 'two')
 
-      expect(html.childNodes.length).toBe(3)
-      expect(html.childNodes[0]).toBeInstanceOf(HTMLAnchorElement)
-      expect(html.childNodes[1]).toBeInstanceOf(HTMLBRElement)
+      expect(html.childNodes.length).toBe(4)
+      expect(html.childNodes[0]).toBeInstanceOf(Text)
+      expect(html.childNodes[1]).toBeInstanceOf(Text)
       expect(html.childNodes[2]).toBeInstanceOf(Text)
-      expect(html.childNodes[2].wholeText).toBe('honk')
+      expect(html.childNodes[3]).toBeInstanceOf(Text)
+      // Text nodes are weird as hell and auto-concat.
+      expect(html.childNodes[0].wholeText).toBe('honkwomponetwo')
     })
   })
 })
