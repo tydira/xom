@@ -18,7 +18,6 @@
   "main": "./dist/xom.js",
   "files": [
     "dist",
-    "doc",
     "src",
     "test"
   ],
