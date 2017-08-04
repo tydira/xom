@@ -5,7 +5,7 @@
 [![Dev Dependencies](https://img.shields.io/david/dev/kroogs/xom.svg)](https://david-dm.org/kroogs/xom?type=dev)
 [![MIT License](https://img.shields.io/github/license/kroogs/proto-es2017.svg)](https://github.com/kroogs/xom/blob/master/LICENSE)
 
-> Abuse Proxy to build DOM elements.
+> Build DOM nodes by misusing Proxy!
 
 ## Features
 
