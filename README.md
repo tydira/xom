@@ -3,6 +3,7 @@
 [![Coverage](https://img.shields.io/coveralls/kroogs/xom.svg)](https://coveralls.io/github/kroogs/xom)
 [![Dependencies](https://img.shields.io/david/kroogs/xom.svg)](https://david-dm.org/kroogs/xom)
 [![Dev Dependencies](https://img.shields.io/david/dev/kroogs/xom.svg)](https://david-dm.org/kroogs/xom?type=dev)
+[![npm version](https://img.shields.io/npm/v/xom.svg)](https://www.npmjs.com/package/xom)
 [![MIT License](https://img.shields.io/github/license/kroogs/proto-es2017.svg)](https://github.com/kroogs/xom/blob/master/LICENSE)
 
 > Build DOM nodes by misusing Proxy!
