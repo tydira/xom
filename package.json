@@ -18,7 +18,6 @@
   "main": "./dist/proto-es2017.js",
   "files": [
     "dist",
-    "doc",
     "src",
     "test"
   ],
