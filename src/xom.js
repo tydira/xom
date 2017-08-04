@@ -44,6 +44,7 @@ export class Xom {
   }
 
   intercept(_, name) {
+    // if (name === 'Xom') return Xom
     return (...args) => {
       if (this.options.namespace) {
         this.el = document.createElementNS(this.options.namespace, name)
@@ -57,9 +58,10 @@ export class Xom {
     }
   }
 
-  buildProxy() {
-    return new Proxy({}, { get: this.intercept.bind(this) })
+  static proxy(...args) {
+    const xom = new Xom(...args)
+    return new Proxy({}, { get: xom.intercept.bind(xom) })
   }
 }
 
-export default new Xom().buildProxy()
+export const dom = Xom.proxy()

@@ -19,14 +19,31 @@
   npm install --save xom
   ```
 
-## Example
+## Usage
 
+  Basic package usage:
   ```javascript
-  import { div, span, b, i } from 'xom'
+  import { dom } from 'xom'
+  const { div, span, b, i } = dom
 
   document.appendChild(
     div({className: 'banana'},
       span('ba', b('na'), i('na'))
+    )
+  )
+  ```
+
+  Customize Xom:
+  ```javascript
+  import { Xom } from 'xom'
+
+  class MyXom extends Xom {}
+
+  x = MyXom.proxy()
+
+  document.appendChild(
+    x.div({className: 'banana'},
+      x.span('ba', x.b('na'), x.i('na'))
     )
   )
   ```

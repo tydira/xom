@@ -1,22 +1,23 @@
-import x, { Xom } from './xom'
+import { Xom, dom } from 'xom'
+const { br, a, div, span, ul, li } = dom
 
 describe('Xom', function() {
   describe('#intercept', function() {
     it('should return arbitrary HTMLElement instances', () => {
-      expect(x.br()).toBeInstanceOf(HTMLBRElement)
-      expect(x.a()).toBeInstanceOf(HTMLAnchorElement)
-      expect(x.div()).toBeInstanceOf(HTMLDivElement)
+      expect(br()).toBeInstanceOf(HTMLBRElement)
+      expect(a()).toBeInstanceOf(HTMLAnchorElement)
+      expect(div()).toBeInstanceOf(HTMLDivElement)
     })
 
     it('should support namespaces', () => {
-      const xom = new Xom({ namespace: 'honk' }).buildProxy()
+      const xom = Xom.proxy({ namespace: 'honk' })
       expect(xom.a().namespaceURI).toBe('honk')
     })
   })
 
   describe('#handleElement', function() {
     it('should create child HTMLElement instances', () => {
-      const html = x.div(x.span(x.a()), x.div(x.ul(x.li(), x.li())))
+      const html = div(span(a()), div(ul(li(), li())))
 
       expect(html.childNodes.length).toBe(2)
       expect(html.childNodes[0]).toBeInstanceOf(HTMLSpanElement)
@@ -29,7 +30,7 @@ describe('Xom', function() {
 
   describe('#handleArray', function() {
     it('should loop arrays and run #handle on each item', () => {
-      const html = x.div([x.a(), x.br(), 'honk'])
+      const html = div([a(), br(), 'honk'])
 
       expect(html.childNodes.length).toBe(3)
       expect(html.childNodes[0]).toBeInstanceOf(HTMLAnchorElement)
@@ -41,13 +42,13 @@ describe('Xom', function() {
 
   describe('#handleObject', function() {
     it('should loop object keys and setAttribute on the HTMLElement', () => {
-      const html = x.div({ class: 'honk' })
+      const html = div({ class: 'honk' })
 
       expect(html.getAttribute('class')).toBe('honk')
     })
 
     it('should set existing JS properties on an element', () => {
-      const html = x.div({ className: 'honk' })
+      const html = div({ className: 'honk' })
 
       expect(html.className).toBe('honk')
     })
@@ -55,7 +56,7 @@ describe('Xom', function() {
 
   describe('#handleGeneric', function() {
     it('should append a Text node', () => {
-      const html = x.div('honk', 'womp', 'one', 'two')
+      const html = div('honk', 'womp', 'one', 'two')
 
       expect(html.childNodes.length).toBe(4)
       expect(html.childNodes[0]).toBeInstanceOf(Text)
