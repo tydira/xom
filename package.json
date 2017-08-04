@@ -26,6 +26,7 @@
     "start": "webpack-dev-server",
     "build": "webpack -p",
     "test": "jest --coverage",
+    "test-dev": "jest --watch --coverage",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "lint": "prettier --no-color --trailing-comma all --no-semi --single-quote --write \"src/**/*.js\" && eslint --fix src",
     "prepublishOnly": "npm run lint && npm test && npm run build"
