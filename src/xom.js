@@ -1,6 +1,5 @@
 export class Xom {
   constructor(options = {}) {
-    this.el = null
     this.options = options
   }
 
@@ -19,7 +18,7 @@ export class Xom {
   }
 
   handleObject(arg) {
-    if (typeof arg === 'object' && !(arg instanceof Array)) {
+    if (typeof arg === 'object') {
       Object.keys(arg).forEach(key => {
         if (key in this.el) {
           this.el[key] = arg[key]
@@ -27,6 +26,7 @@ export class Xom {
           this.el.setAttribute(key, arg[key])
         }
       })
+
       return true
     }
   }
@@ -51,13 +51,13 @@ export class Xom {
         this.el = document.createElement(name)
       }
 
-      args.forEach(this.handle.bind(this))
+      args.forEach((arg, i) => this.handle(arg, i))
 
       return this.el
     }
   }
 
-  static buildProxy() {
+  buildProxy() {
     return new Proxy({}, { get: this.intercept.bind(this) })
   }
 }
