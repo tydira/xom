@@ -6,7 +6,6 @@
   "keywords": [],
   "homepage": "https://github.com/kroogs/xom",
   "author": "Justin Krueger <justin@kroo.gs>",
-  "private": "true",
   "license": "MIT",
   "repository": {
     "type": "git",
