@@ -47,3 +47,8 @@
     )
   )
   ```
+
+## Why?
+
+It was one of the ways of using [Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
+that struck me. There are better solutions for most situations.
