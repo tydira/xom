@@ -1,6 +1,6 @@
 {
   "name": "xom",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Build DOM trees by misusing Proxy!",
   "main": "./dist/xom.js",
   "keywords": [],
