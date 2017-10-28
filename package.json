@@ -1,6 +1,6 @@
 {
   "name": "xom",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Build DOM trees by misusing Proxy!",
   "main": "./dist/xom.js",
   "keywords": [],
@@ -14,7 +14,6 @@
   "bugs": {
     "url": "https://github.com/kroogs/xom/issues"
   },
-  "main": "./dist/xom.js",
   "files": [
     "dist",
     "src",
@@ -34,23 +33,17 @@
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-flow": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1",
     "coveralls": "^3.0.0",
     "esdoc": "^1.0.3",
-    "esdoc-flow-plugin": "^1.0.0",
     "esdoc-standard-plugin": "^1.0.0",
-    "eslint": "^4.8.0",
-    "eslint-plugin-flowtype": "^2.39.1",
-    "eslint-plugin-import": "^2.7.0",
-    "flow": "^0.2.3",
-    "flow-bin": "^0.56.0",
-    "flow-typed": "^2.2.0",
+    "eslint": "^4.9.0",
+    "eslint-plugin-import": "^2.8.0",
     "jest": "^21.2.1",
     "jest-cli": "^21.2.1",
     "prettier": "^1.7.4",
-    "webpack": "^3.6.0"
+    "webpack": "^3.8.1"
   },
   "jest": {
     "moduleDirectories": [
